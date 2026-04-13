@@ -8,8 +8,6 @@
   --accent-ivory: #d4cfc4;
   --accent-ash: #6b6963;
   --accent-smoke: #1a1918;
-  --font-geist-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-playfair: Georgia, "Times New Roman", serif;
 }
 
 @theme inline {
@@ -20,14 +18,14 @@
   --color-ivory: var(--accent-ivory);
   --color-ash: var(--accent-ash);
   --color-smoke: var(--accent-smoke);
-  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-serif: Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-playfair);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 a,
