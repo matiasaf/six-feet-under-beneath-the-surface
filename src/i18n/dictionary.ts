@@ -1,0 +1,318 @@
+import { Locale } from "@/i18n/config"
+
+export const dictionaries = {
+  es: {
+    nav: {
+      scenes: "Escenas",
+      scripts: "Guion",
+      quotes: "Quotes",
+      journeys: "Recorridos",
+      themes: "Temas",
+      characters: "Personajes",
+    },
+    common: {
+      season: "Temporada",
+      episode: "Episodio",
+      scenes: "escenas",
+      scene: "escena",
+      quote: "cita",
+      quotes: "citas",
+      all: "Todas",
+      allMasc: "Todos",
+      image: "Imagen",
+      source: "Fuente",
+      openPdf: "Abrir PDF",
+      viewClip: "Ver clip",
+      back: "Volver",
+      start: "Iniciar recorrido",
+    },
+    mood: {
+      grief: "Duelo",
+      desire: "Deseo",
+      fear: "Miedo",
+      acceptance: "Aceptacion",
+      rupture: "Ruptura",
+      guilt: "Culpa",
+      tenderness: "Ternura",
+    },
+    home: {
+      archive: "Archivo Emocional",
+      title: "Entrar por la superficie.",
+      subtitle: "Bajar hacia lo que no se dice.",
+      intro:
+        "El sitio se recorre como la imagen de la serie: primero la vida a la vista, despues la tierra, despues las capas donde quedan escenas, heridas y preguntas.",
+      descend: "Descender",
+      latestScene: "Ultima escena",
+      navigation: "Navegacion",
+      navigationText: "Cada puerta esta un poco mas abajo.",
+      descent: [
+        ["Escenas", "Seis pies", "Momentos concretos donde la serie deja de narrar y empieza a mirar.", "/scenes"],
+        ["Guion piloto", "Capa cero", "El documento escrito antes de que la serie encontrara su cuerpo definitivo.", "/scripts/pilot"],
+        ["Recorridos", "Raices", "Caminos curados para atravesar duelo, familia, miedo y deseo.", "/journeys"],
+        ["Temas", "Capas", "Las fuerzas que se repiten debajo de cada decision.", "/themes"],
+        ["Personajes", "Restos", "Lo que cada Fisher intenta esconder, conservar o enterrar.", "/characters"],
+      ],
+      universeEyebrow: "El universo",
+      universeTitle: "Una familia que vive de la muerte",
+      universeText:
+        "Los Fisher dirigen una funeraria en Los Angeles. Cada episodio empieza con alguien muriendo. Pero la serie nunca fue sobre los muertos. Fue sobre los vivos que no saben como vivir.",
+      universeMore:
+        "Cinco temporadas. Sesenta y tres episodios. Una de las series mas importantes de la historia de la television. Y probablemente el mejor final que se haya filmado jamas.",
+      themeEyebrow: "Mapa emocional",
+      themeTitle: "Los temas que atraviesan la serie",
+      themeText:
+        "Cada tema es una puerta. Detras hay escenas, dialogos y lecturas que iluminan una misma tension humana desde distintos angulos.",
+      featuredEyebrow: "Escenas suspendidas",
+      featuredTitle: "Momentos que no se pueden olvidar",
+      featuredText:
+        "Escenas que cambian algo adentro. Cada una es una pieza navegable con contexto, dialogo y lectura filosofica.",
+      enterScene: "Entrar a la escena",
+      allScenes: "Ver todas las escenas",
+      timelineEyebrow: "Timeline emocional",
+      timelineTitle: "La serie como una herida que cambia de forma",
+      timelineText:
+        "Un recorrido cronologico por los golpes emocionales del archivo: deseo, miedo, culpa, duelo y aceptacion.",
+      charactersEyebrow: "Anatomia de una familia",
+      charactersTitle: "No biografias. Heridas.",
+      charactersText:
+        "Cada personaje presentado por su conflicto central. Lo que los mueve, lo que los rompe, lo que los define.",
+      archiveEyebrow: "Archivo filosofico",
+      archiveTitle: "Preguntas que la serie deja abiertas",
+      archiveText:
+        "Cada tema es una puerta hacia un recorrido curado de escenas, dialogos y reflexiones. No hay respuestas. Solo mejores preguntas.",
+      doors: [
+        ["Como vivir sabiendo que vamos a morir", "/themes/mortality"],
+        ["Que significa amar mal", "/themes/desire"],
+        ["Que hacemos con el dolor heredado", "/themes/family"],
+        ["Quienes somos cuando dejamos de actuar", "/themes/identity"],
+      ],
+    },
+    pages: {
+      scenesTitle: "Escenas",
+      scenesEyebrow: "Archivo de escenas",
+      scenesDescription:
+        "Cada escena es una unidad narrativa. Un momento concreto con contexto, dialogo, lectura filosofica y conexiones con el resto de la serie.",
+      themesTitle: "Temas",
+      themesDescription:
+        "Entradas para leer la serie desde sus tensiones centrales: lo que cada personaje desea, evita, hereda o no puede nombrar.",
+      charactersTitle: "Personajes",
+      charactersDescription:
+        "No son fichas biograficas. Son retratos de una herida: lo que cada Fisher intenta esconder mientras la vida insiste en exponerlo.",
+      journeysTitle: "Entrar por una herida",
+      journeysEyebrow: "Recorridos curatoriales",
+      journeysDescription:
+        "Caminos de lectura para atravesar el archivo por clima emocional, conflicto familiar y escenas que se responden entre si.",
+      quotesTitle: "Frases que quedan",
+      quotesEyebrow: "Quote explorer",
+      quotesDescription:
+        "Citas como pequenas autopsias emocionales: una frase, una escena, una forma precisa de nombrar lo que nadie quiere decir.",
+      scriptsTitle: "Guiones",
+      scriptsEyebrow: "Capa cero",
+      scriptsDescription:
+        "Documentos originales leidos como restos de proceso: borradores, estructuras, escenas y decisiones que anticipan la forma final de la serie.",
+    },
+    scene: {
+      whatsHappening: "Que esta pasando",
+      whatsUnsaid: "Que no se dice",
+      humanTension: "Que tension humana revela",
+      universalConnection: "Con que experiencia universal conecta",
+      analysis: "Lectura filosofica",
+      related: "Escenas conectadas",
+      immersion: "Inmersion",
+      sensoryCue: "Clave sensorial",
+    },
+    character: {
+      back: "Personajes",
+      coreWound: "Herida central",
+      character: "El personaje",
+      themes: "Temas",
+      keyScenes: "Escenas clave",
+      otherCharacters: "Otros personajes",
+    },
+    theme: {
+      back: "Temas",
+      eyebrow: "Tema",
+      scenes: "Escenas sobre este tema",
+      other: "Otros temas",
+    },
+    quotes: {
+      search: "Buscar",
+      placeholder: "Nate, culpa, foto, normal...",
+      mood: "Estado",
+    },
+    scripts: {
+      back: "Guiones",
+      document: "Documento fuente",
+      writer: "Autor",
+      draft: "Draft",
+      length: "Extension",
+      pages: "paginas",
+      reading: "Lectura",
+      fallback: "Si el visor no carga, abri el documento desde la fuente original.",
+      map: "Mapa del piloto",
+      pageLabel: "Paginas",
+      connectedScene: "Ver escena conectada",
+      themes: "Temas conectados",
+      scenes: "Escenas conectadas",
+    },
+  },
+  en: {
+    nav: {
+      scenes: "Scenes",
+      scripts: "Script",
+      quotes: "Quotes",
+      journeys: "Journeys",
+      themes: "Themes",
+      characters: "Characters",
+    },
+    common: {
+      season: "Season",
+      episode: "Episode",
+      scenes: "scenes",
+      scene: "scene",
+      quote: "quote",
+      quotes: "quotes",
+      all: "All",
+      allMasc: "All",
+      image: "Image",
+      source: "Source",
+      openPdf: "Open PDF",
+      viewClip: "Watch clip",
+      back: "Back",
+      start: "Start journey",
+    },
+    mood: {
+      grief: "Grief",
+      desire: "Desire",
+      fear: "Fear",
+      acceptance: "Acceptance",
+      rupture: "Rupture",
+      guilt: "Guilt",
+      tenderness: "Tenderness",
+    },
+    home: {
+      archive: "Emotional Archive",
+      title: "Enter through the surface.",
+      subtitle: "Descend toward what remains unsaid.",
+      intro:
+        "The site moves like the image from the series: first the visible life, then the soil, then the layers where scenes, wounds, and questions remain.",
+      descend: "Descend",
+      latestScene: "Latest scene",
+      navigation: "Navigation",
+      navigationText: "Every door sits a little deeper.",
+      descent: [
+        ["Scenes", "Six feet", "Precise moments where the series stops narrating and starts looking.", "/scenes"],
+        ["Pilot script", "Layer zero", "The written document before the show found its final body.", "/scripts/pilot"],
+        ["Journeys", "Roots", "Curated paths through grief, family, fear, and desire.", "/journeys"],
+        ["Themes", "Layers", "The forces that keep returning beneath every choice.", "/themes"],
+        ["Characters", "Remains", "What each Fisher tries to hide, preserve, or bury.", "/characters"],
+      ],
+      universeEyebrow: "The universe",
+      universeTitle: "A family that lives from death",
+      universeText:
+        "The Fishers run a funeral home in Los Angeles. Every episode begins with someone dying. But the series was never about the dead. It was about the living, and how little they know about living.",
+      universeMore:
+        "Five seasons. Sixty-three episodes. One of the most important television series ever made. And probably the greatest finale ever filmed.",
+      themeEyebrow: "Emotional map",
+      themeTitle: "The themes running through the series",
+      themeText:
+        "Every theme is a door. Behind it are scenes, lines, and readings that illuminate the same human tension from different angles.",
+      featuredEyebrow: "Suspended scenes",
+      featuredTitle: "Moments that cannot be forgotten",
+      featuredText:
+        "Scenes that change something inside. Each one is a navigable piece with context, dialogue, and philosophical reading.",
+      enterScene: "Enter the scene",
+      allScenes: "See all scenes",
+      timelineEyebrow: "Emotional timeline",
+      timelineTitle: "The series as a wound changing shape",
+      timelineText:
+        "A chronological path through the archive's emotional blows: desire, fear, guilt, grief, and acceptance.",
+      charactersEyebrow: "Anatomy of a family",
+      charactersTitle: "Not biographies. Wounds.",
+      charactersText:
+        "Each character is presented through a central conflict: what moves them, what breaks them, what defines them.",
+      archiveEyebrow: "Philosophical archive",
+      archiveTitle: "Questions the series leaves open",
+      archiveText:
+        "Every theme is a door into a curated path of scenes, dialogue, and reflections. No answers. Only better questions.",
+      doors: [
+        ["How to live knowing we are going to die", "/themes/mortality"],
+        ["What it means to love badly", "/themes/desire"],
+        ["What we do with inherited pain", "/themes/family"],
+        ["Who we are when we stop performing", "/themes/identity"],
+      ],
+    },
+    pages: {
+      scenesTitle: "Scenes",
+      scenesEyebrow: "Scene archive",
+      scenesDescription:
+        "Each scene is a narrative unit: a concrete moment with context, dialogue, philosophical reading, and connections to the rest of the series.",
+      themesTitle: "Themes",
+      themesDescription:
+        "Entries for reading the series through its central tensions: what each character wants, avoids, inherits, or cannot name.",
+      charactersTitle: "Characters",
+      charactersDescription:
+        "Not biographical cards. Portraits of a wound: what each Fisher tries to hide while life keeps exposing it.",
+      journeysTitle: "Enter through a wound",
+      journeysEyebrow: "Curated journeys",
+      journeysDescription:
+        "Reading paths through the archive by emotional climate, family conflict, and scenes that answer one another.",
+      quotesTitle: "Lines that stay",
+      quotesEyebrow: "Quote explorer",
+      quotesDescription:
+        "Quotes as small emotional autopsies: a line, a scene, a precise way to name what nobody wants to say.",
+      scriptsTitle: "Scripts",
+      scriptsEyebrow: "Layer zero",
+      scriptsDescription:
+        "Original documents read as remains of process: drafts, structures, scenes, and choices that anticipate the final shape of the series.",
+    },
+    scene: {
+      whatsHappening: "What is happening",
+      whatsUnsaid: "What remains unsaid",
+      humanTension: "What human tension it reveals",
+      universalConnection: "What universal experience it touches",
+      analysis: "Philosophical reading",
+      related: "Connected scenes",
+      immersion: "Immersion",
+      sensoryCue: "Sensory key",
+    },
+    character: {
+      back: "Characters",
+      coreWound: "Core wound",
+      character: "The character",
+      themes: "Themes",
+      keyScenes: "Key scenes",
+      otherCharacters: "Other characters",
+    },
+    theme: {
+      back: "Themes",
+      eyebrow: "Theme",
+      scenes: "Scenes on this theme",
+      other: "Other themes",
+    },
+    quotes: {
+      search: "Search",
+      placeholder: "Nate, guilt, photo, normal...",
+      mood: "Mood",
+    },
+    scripts: {
+      back: "Scripts",
+      document: "Source document",
+      writer: "Writer",
+      draft: "Draft",
+      length: "Length",
+      pages: "pages",
+      reading: "Reading",
+      fallback: "If the viewer does not load, open the document from the original source.",
+      map: "Pilot map",
+      pageLabel: "Pages",
+      connectedScene: "See connected scene",
+      themes: "Connected themes",
+      scenes: "Connected scenes",
+    },
+  },
+} as const
+
+export function getDictionary(locale: Locale) {
+  return dictionaries[locale]
+}
