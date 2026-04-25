@@ -34,12 +34,12 @@ export function SiteHeader() {
   }, [locale])
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-[#0a0a0a]/80 border-b border-white/5">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+    <header className="fixed left-0 right-0 top-0 z-40 px-3 pt-3 md:px-4">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/10 bg-[linear-gradient(180deg,rgba(10,10,10,0.78),rgba(10,10,10,0.46))] px-5 py-3 shadow-[0_18px_48px_rgba(0,0,0,0.2)] backdrop-blur-xl">
         <Link
           href={withLocale(locale, "/")}
           onClick={() => setOpen(false)}
-          className="font-[family-name:var(--font-playfair)] text-lg tracking-wide text-neutral-200 hover:text-white transition-colors"
+          className="font-[family-name:var(--font-playfair)] text-lg tracking-[0.08em] text-neutral-200 transition-colors hover:text-white"
         >
           Six Feet Under
         </Link>
@@ -90,7 +90,7 @@ export function SiteHeader() {
       {open && (
         <div
           id="mobile-navigation"
-          className="md:hidden border-t border-white/5 bg-[#0a0a0a]/95 backdrop-blur-md px-6 py-6"
+          className="mx-auto mt-3 max-w-7xl rounded-[1.5rem] border border-white/10 bg-[#0a0a0a]/92 px-6 py-6 backdrop-blur-xl md:hidden"
         >
           <div className="flex flex-col gap-4">
             {navItems.map((item) => (

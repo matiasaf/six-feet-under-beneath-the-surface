@@ -103,44 +103,64 @@ const sceneEn: Record<string, SceneCopy> = {
     summary:
       "After facing his attacker, David imagines a conversation with Nathaniel Sr. and receives an impossible truth: pain is not worth more than the life he still has.",
     whatsHappening:
-      "David has just looked the man who kidnapped him in the face. He thinks that gesture should free him, but he returns with the same wound. In the garden, Nathaniel appears as a dry, familiar, brutally lucid presence.",
+      "David has just looked the man who kidnapped him in the face. He thinks that gesture should free him, but he returns with the same wound. When Nathaniel tells him he was brave, David deflects: 'Not really. There was a guard.' He is not just carrying pain — he actively rejects any reading that might dignify him. At the doorway, Nathaniel appears watching the rain beside him, not as a spiritual guide but as a father who is still a father, quiet and mercilessly lucid.",
     whatsUnsaid:
-      "That David wants trauma to have a moral reward. That he needs surviving to mean something clear. That Nathaniel is not there to comfort him, but to tear away the idea that pain should organize his life.",
-    humanTension: "The temptation to turn suffering into identity versus the simple, almost offensive possibility of being alive.",
-    universalConnection: "We have all expected a confrontation to close a wound. Sometimes it only confirms that closure does not come from outside.",
+      "That David wants trauma to have a moral reward, but at the same time rejects any positive signal about himself. Nathaniel says 'I'm proud of you' and David does not even register it. He is not there to comfort him but to strip away a posture: the devotion to suffering as a way of avoiding the responsibility of being alive.",
+    humanTension: "The temptation to turn suffering into identity versus the simple, almost offensive possibility of being alive. David's nihilism is not depth — it is emotional laziness disguised as lucidity.",
+    universalConnection: "We have all expected a confrontation to close a wound. And we have all confused clinging to pain with taking it seriously.",
     analysis:
-      "The scene works because it refuses easy catharsis. David did what seemed necessary: he faced his attacker. But the series does not grant him instant liberation. Nathaniel, whether ghost or inner voice, gives him a brutal truth: pain is not proof of depth, nor a currency that buys meaning. Being alive does not repair what happened, but it opens possibilities trauma tries to shut down. The final question does not simplify suffering; it challenges it. What if living, for once, were less complicated than the story David tells himself about his pain?",
+      "The scene works because it refuses easy catharsis. David did what seemed necessary: he faced his attacker. But the series does not grant him instant liberation. The first thing we see is Nathaniel watching the rain with David, standing in a doorway — a dead man and his son sharing a moment that should not exist. The bougainvillea receives the water it needs without anyone doing anything. That sets the tone: the truth will not arrive wrapped in solemnity, but in the accidental calm of an afternoon rain. Nathaniel speaks as a father, not as an apparition. 'I expect better from you' is a parental demand, not a mystical one. He is telling David that his nihilism is comfort, not courage. And when David keeps resisting, Nathaniel shifts to third person — 'Infinite possibilities and all he can do is whine' — as if David no longer deserves to be addressed directly. That turn is brutal: he stops talking to David and starts talking about him, amplifying the blow. The entire weight of the scene falls on the last two lines. 'It can't be so simple.' 'What if it is?' The possibility that being alive could be that simple is exactly what frightens most. Not because it is false, but because it forces David to let go of the story he tells himself about his pain.",
     imageAlt: "David rests his head on Nathaniel Sr. in a vision from the end of season four.",
     imageSource: "Still from episode S04E12",
     immersion: {
       title: "After looking at the monster",
       intro:
-        "The scene does not need to shout. A garden, a plant being watered, the dead father speaking as if he still lived in the house. The calm makes what David hears even harder.",
-      sensoryCue: "Wet bougainvillea, low light, a familiar voice that offers no shelter.",
+        "The scene does not need to shout. A doorway, the rain falling, the dead father standing beside his son as if he never left. The bougainvillea receives the water without anyone intervening. The calm makes what David hears even harder: no music, no dramatic lighting, just a dead man watching the rain and telling the truth.",
+      sensoryCue: "Rain falling on the bougainvillea, gray afternoon light, two figures in a doorway, a paternal voice that offers no shelter.",
       beats: [
         {
-          speaker: "David",
-          line: "I thought facing him would set me free.",
-          subtext: "He is still waiting for the right act to produce a visible cure.",
+          speaker: "Nathaniel",
+          line: "My bougainvillea needs this.",
+          subtext: "Nathaniel watches the rain fall on his plant. He does nothing — the rain takes care of it. A dead man contemplating how something alive receives what it needs without intervention. The simple and the impossible coexist without explanation.",
         },
         {
           speaker: "Nathaniel",
-          line: "The point is right in front of your face.",
-          subtext: "He is not arguing with the trauma; he is arguing with David's devotion to it.",
+          line: "You were brave to face him. I'm proud of you.",
+          subtext: "Nathaniel offers recognition. David dismisses it — 'there was a guard.' He cannot accept even the smallest positive reading of himself.",
         },
         {
           speaker: "David",
-          line: "I can't be grateful for the worst thing that ever happened to me.",
-          subtext: "He confuses gratitude for living with forgiveness for what he suffered.",
+          line: "I thought it would set me free. But it didn't change anything.",
+          subtext: "He is still waiting for the right act to produce a visible cure. If there is no reward, the gesture does not count.",
         },
         {
           speaker: "Nathaniel",
-          line: "You can do anything. You're alive.",
+          line: "Don't give me this phony existential bullshit. I expect better from you.",
+          subtext: "He speaks as a father, not a spiritual guide. David's nihilism is not depth — it is emotional laziness, and Nathaniel will not validate it.",
+        },
+        {
+          speaker: "Nathaniel",
+          line: "You hang onto your pain like it means something. It's not worth shit. Let it go.",
+          subtext: "The central accusation: David turned suffering into identity. Pain is not proof of depth, nor a currency that buys meaning.",
+        },
+        {
+          speaker: "Nathaniel",
+          line: "Infinite possibilities and all he can do is whine.",
+          subtext: "The shift to third person is the hardest blow. Nathaniel stops talking to David and talks about him, as if he no longer deserves to be addressed directly.",
+        },
+        {
+          speaker: "Nathaniel",
+          line: "You can do anything, you lucky bastard. You're alive.",
           subtext: "The line does not heal. It pushes. It returns a future to a body trapped in the past.",
+        },
+        {
+          speaker: "David / Nathaniel",
+          line: "It can't be so simple. — What if it is?",
+          subtext: "The entire weight of the scene falls here. The possibility that being alive could be that simple is exactly what frightens most.",
         },
       ],
       closing:
-        "The immersion lives in that contradiction: nothing changed, but David can no longer pretend there is nothing left to choose.",
+        "The immersion lives in that contradiction: nothing changed, but David can no longer pretend there is nothing left to choose. The 'what if it is' keeps resonating as a question that needs no answer — because the answer is the fact that David is still there, alive, listening.",
     },
   },
   "david-keith-love": {

@@ -10,12 +10,21 @@ export function HeroIntro({ locale }: { locale: Locale }) {
   const dictionary = getDictionary(locale);
   const descentStops = dictionary.home.descent;
   const firstStop = descentStops[0];
+  const lastStop = descentStops[descentStops.length - 1];
+  const surfaceLabel = locale === 'es' ? 'Superficie' : 'Surface';
+  const surfaceText =
+    locale === 'es'
+      ? 'Luz, aire, rutina. La entrada todavia parece segura.'
+      : 'Light, air, routine. The entrance still feels safe.';
 
   return (
     <section className='relative isolate overflow-hidden bg-[#080907]'>
       <div className='absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(198,229,234,0.34),transparent_28%),radial-gradient(circle_at_72%_14%,rgba(233,224,212,0.12),transparent_18%),linear-gradient(180deg,#a9ccd2_0%,#86a6a7_17%,#617c67_32%,#243026_50%,#0d110d_72%,#080907_100%)]' />
       <div className='absolute inset-0 bg-[linear-gradient(90deg,rgba(8,9,7,0.14)_0%,rgba(8,9,7,0.05)_26%,rgba(8,9,7,0.44)_58%,#080907_100%)]' />
       <div className='absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_34%,rgba(8,9,7,0.58)_100%)]' />
+      <div className='absolute inset-y-0 left-1/2 hidden w-px -translate-x-1/2 bg-gradient-to-b from-white/0 via-white/10 to-transparent lg:block' />
+      <div className='absolute inset-x-[8%] top-24 hidden h-px bg-gradient-to-r from-transparent via-white/10 to-transparent md:block' />
+      <div className='absolute inset-x-[12%] bottom-28 hidden h-px bg-gradient-to-r from-transparent via-[#877666]/30 to-transparent md:block' />
       <div className='absolute inset-x-0 bottom-0 h-48 bg-[linear-gradient(to_bottom,rgba(8,9,7,0),#080907_88%)]' />
 
       <motion.div
@@ -130,6 +139,19 @@ export function HeroIntro({ locale }: { locale: Locale }) {
                 </p>
               </div>
             </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 1.75 }}
+              className='mt-8 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a99f95]/60'
+            >
+              <span className='inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04]'>
+                00
+              </span>
+              <div className='h-px flex-1 bg-gradient-to-r from-white/20 to-transparent' />
+              <span>{lastStop[1]}</span>
+            </motion.div>
           </div>
         </div>
       </motion.div>
@@ -147,6 +169,14 @@ export function HeroIntro({ locale }: { locale: Locale }) {
               <p className='mt-4 font-[family-name:var(--font-playfair)] text-2xl leading-snug text-[#ece5dc]'>
                 {dictionary.home.navigationText}
               </p>
+              <div className='mt-8 hidden rounded-[1.25rem] border border-white/10 bg-white/[0.03] p-4 md:block'>
+                <p className='text-[10px] uppercase tracking-[0.32em] text-[#8d847c]'>
+                  {surfaceLabel}
+                </p>
+                <p className='mt-2 text-sm leading-6 text-[#cabfb3]/72'>
+                  {surfaceText}
+                </p>
+              </div>
             </div>
 
             <div className='relative'>

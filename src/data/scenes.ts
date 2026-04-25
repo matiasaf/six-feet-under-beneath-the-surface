@@ -95,11 +95,11 @@ export const scenes: Scene[] = [
     themes: ["fear", "acceptance", "spirituality"],
     quote: "You can do anything, you lucky bastard. You're alive.",
     summary: "Despues de enfrentar a su agresor, David imagina una charla con Nathaniel Sr. y recibe una verdad imposible de suavizar: el dolor no vale mas que la vida que todavia tiene.",
-    whatsHappening: "David acaba de mirar de frente al hombre que lo secuestro. Cree que ese gesto deberia liberarlo, pero vuelve con la misma herida. En el jardin, Nathaniel aparece como una presencia seca, familiar y despiadadamente lucida.",
-    whatsUnsaid: "Que David quiere que el trauma tenga una recompensa moral. Que necesita que haber sobrevivido signifique algo claro. Que Nathaniel no viene a consolarlo, sino a arrancarle la idea de que su dolor debe organizarle la vida.",
-    humanTension: "La tentacion de convertir el sufrimiento en identidad versus la posibilidad simple, casi ofensiva, de seguir vivo.",
-    universalConnection: "Todos hemos esperado que una confrontacion cierre una herida. A veces solo confirma que el cierre no viene de afuera.",
-    analysis: "La escena funciona porque rechaza la catarsis facil. David hizo lo que parecia necesario: enfrento a su atacante. Pero la serie no le concede una liberacion instantanea. Nathaniel, como fantasma o como voz interna, le devuelve una verdad brutal: el dolor no es una prueba de profundidad, ni una moneda que compra sentido. Estar vivo no arregla lo ocurrido, pero abre posibilidades que el trauma intenta clausurar. La pregunta final no simplifica el sufrimiento; lo desafia. Y si vivir, por una vez, fuera menos complicado que la historia que David se cuenta sobre su dolor?",
+    whatsHappening: "David acaba de mirar de frente al hombre que lo secuestro. Cree que ese gesto deberia liberarlo, pero vuelve con la misma herida. Cuando Nathaniel le dice que fue valiente, David se minimiza: 'Not really. There was a guard.' No solo carga el dolor — rechaza activamente cualquier lectura que lo dignifique. En la puerta de la casa, Nathaniel aparece mirando la lluvia con el, no como guia espiritual sino como padre que sigue siendo padre, quieto y despiadadamente lucido.",
+    whatsUnsaid: "Que David quiere que el trauma tenga una recompensa moral, pero al mismo tiempo rechaza cualquier señal positiva sobre si mismo. Nathaniel le dice 'I'm proud of you' y David ni lo registra. No viene a consolarlo sino a arrancarle una postura: la devocion por el sufrimiento como forma de evitar la responsabilidad de estar vivo.",
+    humanTension: "La tentacion de convertir el sufrimiento en identidad versus la posibilidad simple, casi ofensiva, de seguir vivo. El nihilismo de David no es profundidad: es pereza emocional disfrazada de lucidez.",
+    universalConnection: "Todos hemos esperado que una confrontacion cierre una herida. Y todos hemos confundido aferrarnos al dolor con tomarlo en serio.",
+    analysis: "La escena funciona porque rechaza la catarsis facil. David hizo lo que parecia necesario: enfrento a su atacante. Pero la serie no le concede una liberacion instantanea. Lo primero que vemos es a Nathaniel mirando la lluvia con David, posados en una puerta — un muerto y su hijo compartiendo un momento que no deberia existir. La buganvilla recibe el agua que necesita sin que nadie haga nada. Eso establece el tono: la verdad no va a llegar envuelta en solemnidad, sino en la calma accidental de una lluvia de tarde. Nathaniel habla como padre, no como aparicion. 'I expect better from you' es una demanda paternal, no mistica. Le esta diciendo que su nihilismo es comodidad, no coraje. Y cuando David sigue resistiendose, Nathaniel cambia a tercera persona — 'Infinite possibilities and all he can do is whine' — como si ya no mereciera la interlocucion directa. Ese giro es brutal: deja de hablarle a David para hablar sobre el, amplificando el golpe. Todo el peso de la escena cae en las dos ultimas lineas. 'It can't be so simple.' 'What if it is?' La posibilidad de que estar vivo sea asi de simple es exactamente lo que mas asusta. No porque sea falso, sino porque obliga a soltar la historia que David se cuenta sobre su dolor.",
     mood: "acceptance",
     image: "/s04e12.png",
     imageAlt: "David apoya la cabeza sobre Nathaniel Sr. en una vision del final de la cuarta temporada.",
@@ -108,37 +108,61 @@ export const scenes: Scene[] = [
     immersion: {
       title: "Despues de mirar al monstruo",
       intro:
-        "La escena no necesita gritar. Un jardin, una planta que recibe agua, el padre muerto hablando como si siguiera en casa. La calma vuelve mas duro lo que David escucha.",
+        "La escena no necesita gritar. Una puerta, la lluvia cayendo, el padre muerto parado al lado de su hijo como si nunca se hubiera ido. La buganvilla recibe el agua sin que nadie intervenga. La calma vuelve mas duro lo que David escucha: no hay musica, no hay iluminacion dramatica, solo un hombre muerto mirando llover y diciendo la verdad.",
       sensoryCue:
-        "Buganvilla mojada, luz baja, una voz familiar que no ofrece refugio.",
+        "Lluvia cayendo sobre la buganvilla, luz gris de tarde, dos figuras en una puerta, una voz paternal que no ofrece refugio.",
       beats: [
         {
-          speaker: "David",
-          line: "Crei que enfrentarlo iba a liberarme.",
+          speaker: "Nathaniel",
+          line: "Mi buganvilla necesita esto.",
           subtext:
-            "Todavia espera que el acto correcto produzca una cura visible.",
+            "Nathaniel mira la lluvia caer sobre su planta. No hace nada — la lluvia se encarga. Un muerto contemplando como algo vivo recibe lo que necesita sin intervencion. Lo simple y lo imposible conviven sin explicacion.",
         },
         {
           speaker: "Nathaniel",
-          line: "El punto esta frente a tu cara.",
+          line: "Fuiste valiente al enfrentarlo. Estoy orgulloso de vos.",
           subtext:
-            "No discute el trauma; discute la devocion de David por el trauma.",
+            "Nathaniel ofrece reconocimiento. David lo descarta — 'habia un guardia'. No puede aceptar ni la mas minima lectura positiva de si mismo.",
         },
         {
           speaker: "David",
-          line: "No puedo estar agradecido por lo peor que me paso.",
+          line: "Crei que enfrentarlo iba a liberarme. Pero no cambio nada.",
           subtext:
-            "Confunde gratitud por vivir con perdon por lo sufrido.",
+            "Todavia espera que el acto correcto produzca una cura visible. Si no hay recompensa, el gesto no cuenta.",
         },
         {
           speaker: "Nathaniel",
-          line: "Podes hacer cualquier cosa. Estas vivo.",
+          line: "No me vengas con esta mierda existencialista. Espero mas de vos.",
+          subtext:
+            "Habla como padre, no como guia espiritual. El nihilismo de David no es profundidad — es pereza emocional, y Nathaniel no va a validarla.",
+        },
+        {
+          speaker: "Nathaniel",
+          line: "Te aferras al dolor como si valiera algo. No vale nada. Soltalo.",
+          subtext:
+            "La acusacion central: David convirtio el sufrimiento en identidad. El dolor no es una prueba de profundidad ni una moneda que compra sentido.",
+        },
+        {
+          speaker: "Nathaniel",
+          line: "Posibilidades infinitas y lo unico que puede hacer es quejarse.",
+          subtext:
+            "El cambio a tercera persona es el golpe mas duro. Nathaniel deja de hablarle a David y habla sobre el, como si ya no mereciera la interlocucion directa.",
+        },
+        {
+          speaker: "Nathaniel",
+          line: "Podes hacer cualquier cosa, desgraciado con suerte. Estas vivo.",
           subtext:
             "La frase no cura. Empuja. Le devuelve futuro a un cuerpo atrapado en el pasado.",
         },
+        {
+          speaker: "David / Nathaniel",
+          line: "No puede ser tan simple. — ¿Y si lo es?",
+          subtext:
+            "Todo el peso de la escena cae aca. La posibilidad de que estar vivo sea asi de simple es exactamente lo que mas asusta.",
+        },
       ],
       closing:
-        "La inmersion esta en esa contradiccion: nada cambio, pero David ya no puede fingir que nada queda por elegir.",
+        "La inmersion esta en esa contradiccion: nada cambio, pero David ya no puede fingir que nada queda por elegir. El 'what if it is' queda resonando como una pregunta que no necesita respuesta — porque la respuesta es el hecho de que David sigue ahi, vivo, escuchando.",
     },
     relatedScenes: ["david-kidnapping", "david-keith-love", "nate-death"],
   },
