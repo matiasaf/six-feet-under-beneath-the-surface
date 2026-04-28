@@ -18,14 +18,14 @@ export function HeroIntro({ locale }: { locale: Locale }) {
       : 'Light, air, routine. The entrance still feels safe.';
 
   return (
-    <section className='relative isolate overflow-hidden bg-[#080907]'>
-      <div className='absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(198,229,234,0.34),transparent_28%),radial-gradient(circle_at_72%_14%,rgba(233,224,212,0.12),transparent_18%),linear-gradient(180deg,#a9ccd2_0%,#86a6a7_17%,#617c67_32%,#243026_50%,#0d110d_72%,#080907_100%)]' />
-      <div className='absolute inset-0 bg-[linear-gradient(90deg,rgba(8,9,7,0.14)_0%,rgba(8,9,7,0.05)_26%,rgba(8,9,7,0.44)_58%,#080907_100%)]' />
-      <div className='absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_34%,rgba(8,9,7,0.58)_100%)]' />
+    <section className='relative isolate overflow-hidden bg-transparent'>
+      <div className='absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(198,229,234,0.12),transparent_28%),radial-gradient(circle_at_72%_14%,rgba(233,224,212,0.06),transparent_18%),linear-gradient(180deg,rgba(169,204,210,0.14)_0%,rgba(97,124,103,0.1)_30%,rgba(8,9,7,0.3)_78%,rgba(8,9,7,0.5)_100%)]' />
+      <div className='absolute inset-0 bg-[linear-gradient(90deg,rgba(8,9,7,0.06)_0%,rgba(8,9,7,0)_26%,rgba(8,9,7,0.18)_58%,rgba(8,9,7,0.46)_100%)]' />
+      <div className='absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_34%,rgba(8,9,7,0.24)_100%)]' />
       <div className='absolute inset-y-0 left-1/2 hidden w-px -translate-x-1/2 bg-gradient-to-b from-white/0 via-white/10 to-transparent lg:block' />
       <div className='absolute inset-x-[8%] top-24 hidden h-px bg-gradient-to-r from-transparent via-white/10 to-transparent md:block' />
       <div className='absolute inset-x-[12%] bottom-28 hidden h-px bg-gradient-to-r from-transparent via-[#877666]/30 to-transparent md:block' />
-      <div className='absolute inset-x-0 bottom-0 h-48 bg-[linear-gradient(to_bottom,rgba(8,9,7,0),#080907_88%)]' />
+      <div className='absolute inset-x-0 bottom-0 h-48 bg-[linear-gradient(to_bottom,rgba(8,9,7,0),rgba(8,9,7,0.4)_88%)]' />
 
       <motion.div
         initial={{ opacity: 0 }}
@@ -39,10 +39,10 @@ export function HeroIntro({ locale }: { locale: Locale }) {
           transition={{ duration: 1.1, delay: 0.2, ease: 'easeOut' }}
           className='relative mx-auto w-full max-w-[380px] md:max-w-[430px] md:self-center'
         >
-          <div className='absolute -inset-6 rounded-[2rem] border border-white/8 bg-black/15 shadow-[0_32px_80px_rgba(0,0,0,0.45)] backdrop-blur-[2px]' />
+          <div className='absolute -inset-6 rounded-[2rem] border border-white/8 bg-black/10 shadow-[0_32px_80px_rgba(0,0,0,0.35)] backdrop-blur-[1px]' />
           <div className='absolute -left-2 top-10 h-28 w-28 rounded-full bg-white/12 blur-3xl' />
 
-          <div className='relative overflow-hidden rounded-[1.9rem] border border-white/10 bg-[linear-gradient(180deg,rgba(20,21,18,0.88),rgba(10,10,10,0.96))] p-4 shadow-[0_36px_100px_rgba(0,0,0,0.55)]'>
+          <div className='relative overflow-hidden rounded-[1.9rem] border border-white/10 bg-[linear-gradient(180deg,rgba(20,21,18,0.68),rgba(10,10,10,0.8))] p-4 shadow-[0_36px_100px_rgba(0,0,0,0.45)] backdrop-blur-[1px]'>
             <div className='mb-4 flex items-center justify-between rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-[10px] uppercase tracking-[0.32em] text-[#d8d0c4]/72'>
               <span>{dictionary.home.archive}</span>
               <span>HBO 2001-2005</span>
@@ -64,7 +64,7 @@ export function HeroIntro({ locale }: { locale: Locale }) {
         </motion.div>
 
         <div className='relative md:pb-10 md:pl-2'>
-          <div className='relative max-w-2xl rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(15,17,14,0.42),rgba(8,9,7,0.78))] p-8 shadow-[0_28px_90px_rgba(0,0,0,0.36)] backdrop-blur-md md:p-10 lg:p-12'>
+          <div className='relative max-w-2xl rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(15,17,14,0.28),rgba(8,9,7,0.52))] p-8 shadow-[0_28px_90px_rgba(0,0,0,0.3)] backdrop-blur-[2px] md:p-10 lg:p-12'>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -158,7 +158,7 @@ export function HeroIntro({ locale }: { locale: Locale }) {
 
       <div
         id='descenso'
-        className='relative z-10 border-t border-white/8 bg-[linear-gradient(to_bottom,#11130f,#0b0c0a_36%,#080807)] px-6 py-20 md:py-28'
+        className='relative z-10 border-t border-white/8 bg-[linear-gradient(to_bottom,rgba(17,19,15,0.52),rgba(11,12,10,0.46)_36%,rgba(8,8,7,0.52))] px-6 py-20 backdrop-blur-[1px] md:py-28'
       >
         <div className='mx-auto max-w-5xl'>
           <div className='grid gap-8 md:grid-cols-[220px_1fr]'>

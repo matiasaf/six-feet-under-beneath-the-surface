@@ -13,9 +13,6 @@ export function ArchiveTeaser({ locale }: { locale: Locale }) {
     <section className="px-6 py-24 md:py-40">
       <div className="mx-auto max-w-4xl text-center">
         <FadeIn>
-          <p className="text-[11px] uppercase tracking-[0.4em] text-neutral-600 mb-4">
-            {dictionary.home.archiveEyebrow}
-          </p>
           <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-5xl font-light mb-6">
             {dictionary.home.archiveTitle}
           </h2>

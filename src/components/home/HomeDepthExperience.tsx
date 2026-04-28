@@ -1,10 +1,14 @@
 'use client';
 
 import type { MotionValue } from 'framer-motion';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Lenis from 'lenis';
 import { useEffect, useRef, useState } from 'react';
 import {
   motion,
   useMotionTemplate,
+  useReducedMotion,
   useScroll,
   useTransform,
 } from 'framer-motion';
@@ -15,6 +19,7 @@ import { FeaturedScenes } from '@/components/home/FeaturedScenes';
 import { EmotionalTimeline } from '@/components/home/EmotionalTimeline';
 import { CharacterConstellation } from '@/components/home/CharacterConstellation';
 import { ArchiveTeaser } from '@/components/home/ArchiveTeaser';
+import { SubterraneanScene } from '@/components/home/SubterraneanScene';
 import { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionary';
 import { Character, Scene, Theme } from '@/lib/types';
@@ -31,42 +36,42 @@ const depthSections = [
     key: 'universe',
     depthFeet: '03 ft',
     depthMeters: '01 m',
-    tone: 'from-[#121612]/92 via-[#0c0d0c]/84 to-[#080908]/92',
+    accent: 'from-[#8fa18c]/12 via-transparent to-transparent',
     edge: 'from-[#8fa18c]/18 via-white/8 to-transparent',
   },
   {
     key: 'themes',
     depthFeet: '08 ft',
     depthMeters: '02 m',
-    tone: 'from-[#18140f]/92 via-[#0d0d0c]/86 to-[#080908]/96',
+    accent: 'from-[#9a7a5d]/12 via-transparent to-transparent',
     edge: 'from-[#9a7a5d]/20 via-white/8 to-transparent',
   },
   {
     key: 'scenes',
     depthFeet: '14 ft',
     depthMeters: '04 m',
-    tone: 'from-[#140f0f]/94 via-[#090909]/88 to-[#050505]/98',
+    accent: 'from-[#7b4f4f]/14 via-transparent to-transparent',
     edge: 'from-[#7b4f4f]/24 via-white/8 to-transparent',
   },
   {
     key: 'timeline',
     depthFeet: '19 ft',
     depthMeters: '06 m',
-    tone: 'from-[#100f13]/96 via-[#070708]/92 to-[#040404]/100',
+    accent: 'from-[#6b6578]/14 via-transparent to-transparent',
     edge: 'from-[#6b6578]/20 via-white/8 to-transparent',
   },
   {
     key: 'characters',
     depthFeet: '25 ft',
     depthMeters: '08 m',
-    tone: 'from-[#0f1214]/96 via-[#060708]/92 to-[#020303]/100',
+    accent: 'from-[#6d8987]/12 via-transparent to-transparent',
     edge: 'from-[#6d8987]/18 via-white/8 to-transparent',
   },
   {
     key: 'archive',
     depthFeet: '31 ft',
     depthMeters: '09 m',
-    tone: 'from-[#110d0c]/98 via-[#050505]/96 to-black',
+    accent: 'from-[#9a9286]/12 via-transparent to-transparent',
     edge: 'from-[#9a9286]/18 via-white/8 to-transparent',
   },
 ] as const;
@@ -91,7 +96,7 @@ function DepthShell({
   sectionId,
   depth,
   title,
-  tone,
+  accent,
   edge,
   align = 'left',
   children,
@@ -99,7 +104,7 @@ function DepthShell({
   sectionId: string;
   depth: string;
   title: string;
-  tone: string;
+  accent: string;
   edge: string;
   align?: 'left' | 'right';
   children: React.ReactNode;
@@ -120,10 +125,14 @@ function DepthShell({
       </div>
 
       <div
-        className={`relative overflow-hidden rounded-[2rem] border border-white/8 bg-gradient-to-b ${tone} shadow-[0_40px_140px_rgba(0,0,0,0.35)]`}
+        className='relative overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(10,10,10,0.48),rgba(10,10,10,0.32))] shadow-[0_18px_48px_rgba(0,0,0,0.28)] backdrop-blur-2xl backdrop-saturate-125'
       >
         <div
-          className='absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_32%),linear-gradient(180deg,rgba(255,255,255,0.02),transparent_30%,rgba(0,0,0,0.18)_100%)]'
+          className={`absolute inset-0 bg-gradient-to-b ${accent}`}
+          aria-hidden='true'
+        />
+        <div
+          className='absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.04),transparent_42%)]'
           aria-hidden='true'
         />
         <div
@@ -262,6 +271,7 @@ export function HomeDepthExperience({
   characters,
 }: HomeDepthExperienceProps) {
   const dictionary = getDictionary(locale);
+  const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
   const [activeSectionId, setActiveSectionId] = useState<string | null>(null);
   const depthSectionsForLocale = depthSections.map((section) => ({
@@ -272,12 +282,12 @@ export function HomeDepthExperience({
   const skyOpacity = useTransform(
     scrollYProgress,
     [0, 0.2, 0.4],
-    [1, 0.45, 0.12],
+    [0.18, 0.08, 0.02],
   );
   const caveOpacity = useTransform(
     scrollYProgress,
     [0.05, 0.45, 1],
-    [0.12, 0.48, 0.9],
+    [0.06, 0.28, 0.62],
   );
   const strataY = useTransform(scrollYProgress, [0, 1], ['0%', '24%']);
   const ambientScale = useTransform(scrollYProgress, [0, 1], [1, 1.28]);
@@ -285,6 +295,33 @@ export function HomeDepthExperience({
 
   const surfaceGlow = useMotionTemplate`radial-gradient(circle at 50% 0%, rgba(193,215,214,${skyOpacity}), transparent 36%)`;
   const abyssGlow = useMotionTemplate`radial-gradient(circle at 50% 100%, rgba(10,8,7,${caveOpacity}), rgba(0,0,0,0.96) 62%)`;
+
+  useEffect(() => {
+    if (reduceMotion) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const lenis = new Lenis({
+      duration: 1.08,
+      easing: (time) => Math.min(1, 1.001 - 2 ** (-10 * time)),
+      smoothWheel: true,
+      syncTouch: false,
+      wheelMultiplier: 0.92,
+    });
+
+    const raf = (time: number) => {
+      lenis.raf(time * 1000);
+    };
+
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(raf);
+    gsap.ticker.lagSmoothing(0);
+
+    return () => {
+      gsap.ticker.remove(raf);
+      lenis.destroy();
+    };
+  }, [reduceMotion]);
 
   useEffect(() => {
     const sections = depthSectionOrder
@@ -362,8 +399,12 @@ export function HomeDepthExperience({
 
   return (
     <main className='relative overflow-hidden bg-[#050505]'>
+      {!reduceMotion && <SubterraneanScene progress={scrollYProgress} />}
+
       <div
-        className='pointer-events-none fixed inset-0 z-0 overflow-hidden'
+        className={`pointer-events-none fixed inset-0 z-[2] overflow-hidden ${
+          reduceMotion ? '' : 'opacity-20 mix-blend-soft-light'
+        }`}
         aria-hidden='true'
       >
         <motion.div
@@ -401,7 +442,7 @@ export function HomeDepthExperience({
             sectionId='universe'
             depth={depthSectionsForLocale[0].depth}
             title={dictionary.home.universeTitle}
-            tone={depthSectionsForLocale[0].tone}
+            accent={depthSectionsForLocale[0].accent}
             edge={depthSectionsForLocale[0].edge}
           >
             <UniverseSection locale={locale} />
@@ -411,7 +452,7 @@ export function HomeDepthExperience({
             sectionId='themes'
             depth={depthSectionsForLocale[1].depth}
             title={dictionary.home.themeTitle}
-            tone={depthSectionsForLocale[1].tone}
+            accent={depthSectionsForLocale[1].accent}
             edge={depthSectionsForLocale[1].edge}
             align='right'
           >
@@ -422,7 +463,7 @@ export function HomeDepthExperience({
             sectionId='scenes'
             depth={depthSectionsForLocale[2].depth}
             title={dictionary.home.featuredTitle}
-            tone={depthSectionsForLocale[2].tone}
+            accent={depthSectionsForLocale[2].accent}
             edge={depthSectionsForLocale[2].edge}
           >
             <FeaturedScenes locale={locale} scenes={scenes} />
@@ -432,7 +473,7 @@ export function HomeDepthExperience({
             sectionId='journeys'
             depth={depthSectionsForLocale[3].depth}
             title={dictionary.home.timelineTitle}
-            tone={depthSectionsForLocale[3].tone}
+            accent={depthSectionsForLocale[3].accent}
             edge={depthSectionsForLocale[3].edge}
             align='right'
           >
@@ -443,7 +484,7 @@ export function HomeDepthExperience({
             sectionId='characters'
             depth={depthSectionsForLocale[4].depth}
             title={dictionary.home.charactersTitle}
-            tone={depthSectionsForLocale[4].tone}
+            accent={depthSectionsForLocale[4].accent}
             edge={depthSectionsForLocale[4].edge}
           >
             <CharacterConstellation locale={locale} characters={characters} />
@@ -453,7 +494,7 @@ export function HomeDepthExperience({
             sectionId='scripts'
             depth={depthSectionsForLocale[5].depth}
             title={dictionary.home.archiveTitle}
-            tone={depthSectionsForLocale[5].tone}
+            accent={depthSectionsForLocale[5].accent}
             edge={depthSectionsForLocale[5].edge}
             align='right'
           >
