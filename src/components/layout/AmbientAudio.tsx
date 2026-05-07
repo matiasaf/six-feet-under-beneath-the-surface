@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react"
 
+const STORAGE_KEY = "ambient-audio-enabled"
+
 type AudioNodes = {
   context: AudioContext
   gain: GainNode
@@ -24,24 +26,31 @@ export function AmbientAudio() {
   const nodesRef = useRef<AudioNodes | null>(null)
   const [enabled, setEnabled] = useState(false)
 
-  useEffect(() => {
-    return () => {
-      nodesRef.current?.context.close()
-      nodesRef.current = null
+  function persistPreference(nextEnabled: boolean) {
+    try {
+      window.localStorage.setItem(STORAGE_KEY, String(nextEnabled))
+    } catch {
+      // Ignore storage access failures and keep runtime behavior intact.
     }
-  }, [])
+  }
 
-  async function toggleAudio() {
-    if (enabled) {
-      const nodes = nodesRef.current
-      if (nodes) {
-        nodes.gain.gain.setTargetAtTime(0, nodes.context.currentTime, 0.6)
-        window.setTimeout(() => {
-          nodes.context.close()
-          if (nodesRef.current === nodes) nodesRef.current = null
-        }, 900)
-      }
-      setEnabled(false)
+  function stopAudio() {
+    const nodes = nodesRef.current
+    if (nodes) {
+      nodes.gain.gain.setTargetAtTime(0, nodes.context.currentTime, 0.6)
+      window.setTimeout(() => {
+        nodes.context.close()
+        if (nodesRef.current === nodes) nodesRef.current = null
+      }, 900)
+    }
+
+    setEnabled(false)
+  }
+
+  async function startAudio() {
+    if (nodesRef.current) {
+      await nodesRef.current.context.resume()
+      setEnabled(true)
       return
     }
 
@@ -86,6 +95,37 @@ export function AmbientAudio() {
     await context.resume()
     setEnabled(true)
   }
+
+  async function toggleAudio() {
+    const nextEnabled = !enabled
+    persistPreference(nextEnabled)
+
+    if (!nextEnabled) {
+      stopAudio()
+      return
+    }
+
+    await startAudio()
+  }
+
+  useEffect(() => {
+    async function syncStoredPreference() {
+      try {
+        if (window.localStorage.getItem(STORAGE_KEY) === "true") {
+          await startAudio()
+        }
+      } catch {
+        // Ignore storage access failures and keep the default behavior.
+      }
+    }
+
+    void syncStoredPreference()
+
+    return () => {
+      nodesRef.current?.context.close()
+      nodesRef.current = null
+    }
+  }, [])
 
   return (
     <button
