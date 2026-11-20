@@ -1,8 +1,11 @@
 "use client"
 
+import { useEffect } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Scene } from "@/lib/types"
 import { FadeIn } from "@/components/motion/FadeIn"
+import { scenes } from "@/data/scenes"
 import { Locale, withLocale } from "@/i18n/config"
 import { getDictionary } from "@/i18n/dictionary"
 
@@ -13,10 +16,38 @@ interface ScenePageClientProps {
 }
 
 export function ScenePageClient({ scene, relatedScenes, locale = "es" }: ScenePageClientProps) {
+  const router = useRouter()
   const dictionary = getDictionary(locale)
   const youtubeId = scene.clipUrl?.includes("v=")
     ? scene.clipUrl.split("v=")[1]?.split("&")[0]
     : undefined
+  const sceneIndex = scenes.findIndex((item) => item.slug === scene.slug)
+  const previousScene = sceneIndex > 0 ? scenes[sceneIndex - 1] : undefined
+  const nextScene = sceneIndex >= 0 ? scenes[sceneIndex + 1] : undefined
+
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      const target = event.target
+
+      if (
+        target instanceof HTMLInputElement ||
+        target instanceof HTMLTextAreaElement
+      ) {
+        return
+      }
+
+      if (event.key === "ArrowLeft" && previousScene) {
+        router.push(withLocale(locale, `/scenes/${previousScene.slug}`))
+      }
+
+      if (event.key === "ArrowRight" && nextScene) {
+        router.push(withLocale(locale, `/scenes/${nextScene.slug}`))
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [locale, nextScene, previousScene, router])
 
   return (
     <>
